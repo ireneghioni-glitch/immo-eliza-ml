@@ -1,7 +1,6 @@
-# Preparation-for-Sprint-3-IMMO-ELIZA-Project
+## Preparation-for-Sprint-3-IMMO-ELIZA-Project
 
-'''
-ImmoEliza ML Pipeline
+<pre><code>ImmoEliza ML Pipeline
 │
 ├── 1. Data Preparation ───────> Riferimento: 01-preprocessing.ipynb
 │                                (Gestione missing, Scaling, Encoding)
@@ -16,5 +15,4 @@ ImmoEliza ML Pipeline
 │                                (Alberi di decisione, Random Forest, XGBoost)
 │
 └── 5. Optimization ───────────> Riferimento: 04-hyperparameter-tuning.ipynb
-                                 (GridSearchCV, Tuning fine)
-'''
+                                 (GridSearchCV, Tuning fine)</code></pre>
