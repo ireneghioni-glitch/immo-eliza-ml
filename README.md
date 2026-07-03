@@ -1,6 +1,5 @@
 # Immo-Eliza Machine Learning Model 🚀
 
-# Immo Eliza – Real Estate Price Prediction Pipeline
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Sprint](https://img.shields.io/badge/Sprint-3%20Completed-brightgreen)
 ![Status](https://img.shields.io/badge/Status-ML%20Pipeline%20working-brightgreen)

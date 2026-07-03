@@ -2,8 +2,3 @@
 **/__pycache__/
 *.py[cod]
 data/raw/StatBel/
-1_Data_splitting/
-2_Data_Preparation/
-3_Baseline_Model/
-4_Model_Comparison/
-5_Optimization/
