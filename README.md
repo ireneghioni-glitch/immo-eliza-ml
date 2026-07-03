@@ -7,11 +7,11 @@
 [![BeCode](https://img.shields.io/badge/Training-BeCode-brilliantgreen?logo=becode&logoColor=white)](https://becode.org/)
 
 
-**Repository:** `immo-eliza-ml`
-**Type:** `Learning + Consolidation`
-**Duration:** `5 days`
-**Deadline:** `03/07/2026, 4:30 pm`
-**Team:** solo
+**Repository:** `immo-eliza-ml`  
+**Type:** `Learning + Consolidation`  
+**Duration:** `5 days`  
+**Deadline:** `03/07/2026, 4:30 pm`  
+**Team:** solo  
 
 ---
 
