@@ -73,6 +73,7 @@ Y_TEST_CSV_PATH = "../../data/raw/train_test/y_test.csv"
 PROP_TRAIN_PREPROC_CSV_PATH = "../data/cleaned/properties_train_preprocessed.csv"
 PROP_TEST_PREPROC_CSV_PATH = "../data/cleaned/properties_test_preprocessed.csv"
 
+FEAT_TRAIN_RAW_CLEAN = "../data/cleaned/features_train_raw_cleaned_for_predict.csv"
 FEAT_TEST_RAW_CLEAN = "../data/cleaned/features_test_raw_cleaned_for_predict.csv"
 
 # path to generated charts directory 
@@ -120,6 +121,9 @@ def load_split_preprocess_data():
     features_train = add_new_features(features_train)
     # --- Handling Missing Values ---
     features_train = handle_missing_values(features_train)
+
+    features_train.to_csv(FEAT_TRAIN_RAW_CLEAN, index=False)
+
     # --- Encoding ---
     features_train, ohe, ordinal, bins_density = encode_features(features_train, ohe=None, ordinal=None, bins_density=None)
     # --- Feature Scaling ---
@@ -267,6 +271,7 @@ if __name__ == "__main__":
     ohe_file_name = "ohe.joblib"
     ordinal_file_name = "ordinal.joblib"
     bins_density_file_name = "bins_density.joblib"
+    density_mapping_file_name = "density_mapping.joblib"
     joblib.dump(saved_scaler, os.path.join(MODEL_DIR_PATH, scaler_file_name))
     print(f"✅ Production scaler successfully saved in {MODEL_DIR_PATH} as {scaler_file_name}.")
     joblib.dump(trained_ohe, os.path.join(MODEL_DIR_PATH, ohe_file_name))
@@ -275,3 +280,5 @@ if __name__ == "__main__":
     print(f"✅ Production Ordinal encoder successfully saved in {MODEL_DIR_PATH} as {ordinal_file_name}.")
     joblib.dump(bins_density, os.path.join(MODEL_DIR_PATH, bins_density_file_name))
     print(f"✅ Production bins density encoder successfully saved in {MODEL_DIR_PATH} as {bins_density_file_name}.")
+    joblib.dump(bins_density, os.path.join(MODEL_DIR_PATH, density_mapping_file_name))
+    print(f"✅ Production bins density encoder successfully saved in {MODEL_DIR_PATH} as {density_mapping_file_name}.")
