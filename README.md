@@ -41,18 +41,7 @@ The optimized model recorded a decisive performance increase, escalating from an
 
 ---
 
-## 🧮 Model Performance Metrics
-Evaluating the production-ready model yielded the following validation profile on the test set:
-
-| Metric | Score / Value |
-| :--- | :--- |
-| **R² Score** | 69.57 % |
-| **MAE** | 85,906.43 € |
-| **RMSE** | 181,299.07 € |
-
----
-
-## 📊 Model Evaluation & Comparison
+## 🧮 Model Evaluation & Comparison
 A rigorous benchmarking process was conducted across multiple algorithms. The table below illustrates the performance leap achieved by transitioning from linear baselines to ensemble methods, combined with strategic outlier mitigation:
 
 | Model | Train R² | Test R² | Train MAE | Test MAE |
