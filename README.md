@@ -81,16 +81,20 @@ To understand what drives real estate prices in the Belgian market, the top 10 m
 
 ---
 
-## 🎯 Next Steps: Room for Improvement
+## 🔭 Next Steps: Room for Improvement
 While the optimized XGBoost model achieved a solid performance jump to a 69.57% R² score on the test set, the gap between the training score (96.94%) and the test score indicates a clear pattern of overfitting. To bridge this gap and push the model's predictive power toward the 80%+ threshold, the following structural enhancements are planned:
 
-- High-Cardinality Target Encoding: Replace the current OneHotEncoder implementation for high-cardinality categorical features like province and property_subtype. Switching to a TargetEncoder will keep the feature space compact, preventing the tree fragmentation and dimensionality explosion caused by sparse binary matrices.
+- **High-Cardinality Target Encoding**: Replace the current OneHotEncoder implementation for high-cardinality categorical features like province and property_subtype. Switching to a TargetEncoder will keep the feature space compact, preventing the tree fragmentation and dimensionality explosion caused by sparse binary matrices.
 
-- Feature Pruning & Selection: Review the engineered features (such as living_area_ratio and bedroom_density) against the extracted feature importance chart. Removing low-importance or highly collinear columns will eliminate statistical noise and prevent the model from tracking non-predictive variations.
+- **Feature Pruning & Selection**: Review the engineered features (such as living_area_ratio and bedroom_density) against the extracted feature importance chart. Removing low-importance or highly collinear columns will eliminate statistical noise and prevent the model from tracking non-predictive variations.
 
-- Stricter Model Regularization: Apply tighter structural boundaries on the XGBoost regressor by reducing the maximum depth (max_depth) and increasing the minimum child weight (min_child_weight). Introducing explicit regularizers like gamma or L1/L2 penalties (alpha/lambda) will actively penalize complex trees and restrict aggressive historical data memorization.
+- **Stricter Model Regularization**: Apply tighter structural boundaries on the XGBoost regressor by reducing the maximum depth (max_depth) and increasing the minimum child weight (min_child_weight). Introducing explicit regularizers like gamma or L1/L2 penalties (alpha/lambda) will actively penalize complex trees and restrict aggressive historical data memorization.
 
-- Robust K-Fold Cross-Validation: Transition from a single static split pipeline to a robust K-Fold Cross-Validation strategy for the tuning phase. Keeping the current test set strictly as a final blind validation anchor will guarantee that hyperparameter optimization is statistically stable across the entire distribution.
+- **Robust K-Fold Cross-Validation**: Transition from a single static split pipeline to a robust K-Fold Cross-Validation strategy for the tuning phase. Keeping the current test set strictly as a final blind validation anchor will guarantee that hyperparameter optimization is statistically stable across the entire distribution.
+
+Other notes for future improvements: reconsider encoding for postal codes (https://en.wikipedia.org/wiki/Postal_codes_in_Belgium#/media/File:2_digit_postcode_belgique.png)
+
+📚 Also planning to take this course: https://www.datacamp.com/courses/preprocessing-for-machine-learning-in-python
 
 ---
 
@@ -138,7 +142,9 @@ immo-eliza-ml/
 │   └── xgboost_model.joblib              <-- Serialized production artifact
 ├── src/
 │   ├── utils/
-│   │   └── metrics_utils.py              <-- Metric calculation utilities
+│   │   ├── data_split.py                 <-- Function for splitting data
+│   │   ├── preprocessing.py              <-- Functions for doing preprocessing on raw data
+│   │   └── validation.py                 <-- Functions for model validation (metrics calculation and graphs generation)
 │   ├── train.py                          <-- Executable pipeline to train and dump the model
 │   └── predict.py                        <-- Executable script for inference testing
 ├── requirements.txt                      <-- Third-party library dependencies
